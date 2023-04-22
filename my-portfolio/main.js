@@ -28,14 +28,14 @@ scene.add(pointLight, ambientLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar(){
-  const geometry = new THREE.SphereGeometry(0.15, 15, 15);
+  const geometry = new THREE.SphereGeometry(0.35, 15, 15);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
   const star = new THREE.Mesh(geometry, material);
 
   star.position.set(
-    (Math.random() - 0.5) * 100, // random x position between -50 and 50
-    (Math.random() - 0.5) * 100, // random y position between -50 and 50
-    (Math.random() - 0.5) * 100  // random z position between -50 and 50
+    (Math.random() - 0.5) * renderer.domElement.width, // random x position within canvas width
+    (Math.random() - 0.5) * renderer.domElement.height, // random y position within canvas height
+    -Math.random() * 1000  // random z position within a range (e.g. -1000 to 0)
   );
 
   scene.add(star);
@@ -46,7 +46,7 @@ Array(2000).fill().forEach(addStar);
 
 const kcTexture = new THREE.TextureLoader().load('./resources/img/pic6.jpg');
 const kc = new THREE.Mesh(
-  new THREE.BoxGeometry(13, 13, 13),
+  new THREE.BoxGeometry(10, 10, 10),
   new THREE.MeshBasicMaterial({ map: kcTexture })
 );
 scene.add(kc);
