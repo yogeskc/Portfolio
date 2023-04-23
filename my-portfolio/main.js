@@ -1,6 +1,7 @@
 import './css/style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { lockControls, hideInstructions, showInstructions } from './js/welcome'
 
 const scene = new THREE.Scene();
 
@@ -61,4 +62,14 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-animate();
+
+function welcome() {
+  
+  blocker.addEventListener('click', function() {
+    animate();
+    blocker.style.display = "none";
+  });
+    
+}
+
+welcome();
