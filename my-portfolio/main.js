@@ -53,6 +53,29 @@ const kc = new THREE.Mesh(
 );
 scene.add(kc);
 
+// const textures = [
+//   './resources/img/pic1.jpg',
+//   './resources/img/pic2.jpg',
+//   './resources/img/pic3.jpg',
+//   './resources/img/pic4.jpg',
+//   './resources/img/pic6.jpg',
+//   './resources/img/pic5.jpg',
+  
+// ];
+
+// const materials = [];
+// for (let i = 0; i < 6; i++) {
+//   const texture = new THREE.TextureLoader().load(textures[i]);
+//   const material = new THREE.MeshBasicMaterial({ map: texture });
+//   materials.push(material);
+// }
+
+// const geometryy = new THREE.BoxGeometry(10, 10, 10);
+// const cube = new THREE.Mesh(geometryy, materials);
+
+// scene.add(cube);
+
+
 function animate() {
   requestAnimationFrame(animate);
 
