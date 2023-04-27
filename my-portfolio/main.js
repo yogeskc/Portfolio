@@ -1,7 +1,8 @@
 import './css/style.css';
+import './css/canvas.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { lockControls, hideInstructions, showInstructions } from './js/welcome'
+
 
 const scene = new THREE.Scene();
 
@@ -63,13 +64,16 @@ function animate() {
 }
 
 
-function welcome() {
+const container = document.querySelector('#threeD');
+const canvas = document.querySelector('.container-fluid')
+container.addEventListener('click', function() {
+  animate();
+  container.style.display = 'none';
+  container.style.position = 'relative';
   
-  blocker.addEventListener('click', function() {
-    animate();
-    blocker.style.display = "none";
-  });
-    
-}
+  canvas.style.display='block';
+  canvas.style.position = 'absolute';
+});
 
-welcome();
+    
+
